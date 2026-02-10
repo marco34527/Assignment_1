@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    .main{
+        margin: 10% 20%;
+    }
+    h1{
+        color: rgb(130, 188, 236); font-size: 80px;
+    }
+    li{
+        font-family: 'Poppins', sans-serif;
+        color: #223642;
+        font-size: 18px;
+        line-height: 1.5;
+        font-weight: 500;
+        margin: 0; 
+    }
+    input{
+        font-size: 18px;   
+        width: 300px;       
+        margin-bottom: 15px;
+        border-radius: 5px;
+    }
+</style>
+<body>
+    <ul class="nav">
+        <li> <a href="index.html"> Home </a></li>
+        <li class="dropdown"> <a href="AboutMe.html"> About Me </a>
+            <div class="dropdown-content">
+                <a href="Internship.html">Internship</a>
+                <a href="Projects.html">Projects</a>
+            </div>
+        </li>
+        <li>
+            <a href="ContactMe.html" class="active"> Contact Me</a> 
+        </li>
+    </ul>
+    <div class="main">
+        <form id="contactForm">
+            <label for="fname">First name:</label><br>
+            <input type="text" id="fname" name="fname"><br>
+            <label for="lname">Last name:</label><br>
+            <input type="text" id="lname" name="lname"><br>
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email"><br><br>
+            <button type="submit" onclick="myfunction()">Submit</button>
+        </form>  
+        <script>
+            const form = document.getElementById("contactForm");
+            form.addEventListener("submit", function(event) {   
+                const fname = document.getElementById("fname").value;
+                const lname = document.getElementById("lname").value;
+                const email = document.getElementById("email").value;
+                if (fname === "") {
+                    alert("Please enter your first name.");
+                    return;
+                }
+                if (lname === "") {
+                    alert("Please enter your last name.");
+                    return;
+                }
+                if (email === "") {
+                    alert("Please enter your email.");
+                    return;
+                }
+                alert(`Thank you, ${fname} ${lname}! I will get back to you at ${email} soon.`);
+            });
+        </script>
+    </div>
+
+</body>
+</html>
